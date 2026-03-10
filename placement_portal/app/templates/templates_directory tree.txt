@@ -1,0 +1,38 @@
+Folder PATH listing for volume ACER
+Volume serial number is 4A5C-9CBA
+C:\SHUBHAM\ROADMAP\MAD 1 PROJECT PLACEMENT PORTAL\PLACEMENT_PORTAL\APP\TEMPLATES
+¦   base.html
+¦   landing.html
+¦   structure.txt
+¦   
++---admin
+¦   ¦   applications.html
+¦   ¦   dashboard.html
+¦   ¦   layout.html
+¦   ¦   manage_companies.html
+¦   ¦   manage_students.html
+¦   ¦   pending_companies.html
+¦   ¦   pending_drives.html
+¦   ¦   reports.html
+¦   ¦   
+¦   +---components
+¦           _admin_sidebar.html
+¦           _notifications.html
+¦           _search_panel.html
+¦           _stats_cards.html
+¦           
++---auth
+¦   ¦   card_layout.html
+¦   ¦   layout.html
+¦   ¦   login.html
+¦   ¦   register_company.html
+¦   ¦   register_student.html
+¦   ¦   
+¦   +---components
+¦           _auth_card.html
+¦           _login_form.html
+¦           _register_company_form.html
+¦           _register_student_form.html
+¦           
++---company
++---student

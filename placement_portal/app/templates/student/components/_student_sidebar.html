@@ -1,0 +1,28 @@
+<nav class="nav flex-column text-white p-3">
+
+    <h4 class="text-center mb-4">Student Panel</h4>
+
+    <a class="nav-link text-white"
+       href="{{ url_for('student.student_dashboard_view') }}">
+        Dashboard
+    </a>
+
+    <a class="nav-link text-white"
+       href="{{ url_for('student.my_applications_view') }}">
+        My Applications
+    </a>
+
+    <a class="nav-link text-white"
+       href="{{ url_for('student.placement_history_view') }}">
+        Placement History
+    </a>
+
+    <a class="nav-link text-white"
+       href="{{ url_for('student.student_profile_view') }}">
+        Profile
+    </a>
+
+    <hr class="text-white">
+
+
+</nav>

@@ -1,0 +1,156 @@
+openapi: 3.0.0
+
+info:
+  title: Placement Portal API
+  description: API specification for the Institute Placement Portal built using Flask.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+
+  /auth/login:
+    post:
+      summary: Authenticate user
+      description: Logs in a user using email and password.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: Login successful
+        "401":
+          description: Invalid credentials
+
+  /auth/logout:
+    post:
+      summary: Logout user
+      description: Ends the current user session.
+      responses:
+        "200":
+          description: Logout successful
+
+  /admin/approve-company/{company_id}:
+    post:
+      summary: Approve company registration
+      parameters:
+        - name: company_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Company approved
+
+  /admin/approve-drive/{drive_id}:
+    post:
+      summary: Approve placement drive
+      parameters:
+        - name: drive_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Placement drive approved
+
+  /company/create-drive:
+    post:
+      summary: Create placement drive
+      description: Company creates a new placement drive.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                job_title:
+                  type: string
+                job_description:
+                  type: string
+                eligibility_criteria:
+                  type: string
+                application_deadline:
+                  type: string
+      responses:
+        "200":
+          description: Placement drive created
+
+  /company/shortlist/{application_id}:
+    post:
+      summary: Shortlist candidate
+      parameters:
+        - name: application_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Candidate shortlisted
+
+  /company/select/{application_id}:
+    post:
+      summary: Select candidate
+      parameters:
+        - name: application_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Candidate selected
+
+  /company/reject/{application_id}:
+    post:
+      summary: Reject candidate
+      parameters:
+        - name: application_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Candidate rejected
+
+  /student/drives:
+    get:
+      summary: View available placement drives
+      responses:
+        "200":
+          description: List of approved placement drives
+
+  /student/apply/{drive_id}:
+    post:
+      summary: Apply to placement drive
+      parameters:
+        - name: drive_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Application submitted
+
+  /student/applications:
+    get:
+      summary: View student's applications
+      responses:
+        "200":
+          description: List of student applications

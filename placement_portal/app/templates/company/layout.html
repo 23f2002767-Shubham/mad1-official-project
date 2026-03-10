@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Company Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+
+    <!-- Sidebar -->
+    <div class="col-md-2 p-0">
+        {% include "company/components/_company_sidebar.html" %}
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-10 p-4">
+
+        <!-- Page Header -->
+        {% block company_header %}
+        {% endblock %}
+
+        <!-- Notifications -->
+        {% include "company/components/_notifications.html" %}
+
+        <!-- Page Content -->
+        <div class="mt-4">
+            {% block company_content %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

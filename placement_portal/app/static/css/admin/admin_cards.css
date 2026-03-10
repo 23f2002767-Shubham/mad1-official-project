@@ -1,0 +1,39 @@
+/* ===============================
+   ADMIN CARD STYLING
+   Scoped to .admin-wrapper
+================================ */
+
+/* Base admin card */
+.admin-wrapper .admin-card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover animation */
+.admin-wrapper .admin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Card header styling */
+.admin-wrapper .admin-card .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 600;
+}
+
+/* Dashboard stat cards (optional helper) */
+.admin-wrapper .admin-stat-card {
+    text-align: center;
+}
+
+.admin-wrapper .admin-stat-card .card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.admin-wrapper .admin-stat-card .display-6 {
+    font-weight: 600;
+}

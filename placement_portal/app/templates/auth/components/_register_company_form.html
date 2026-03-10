@@ -1,0 +1,40 @@
+<form method="POST">
+
+<h3 class="mb-4 text-center">Company Registration</h3>
+
+{% if error %}
+<div class="alert alert-danger">
+    {{ error }}
+</div>
+{% endif %}
+
+<div class="mb-3">
+<label class="form-label">Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Password</label>
+<input type="password" name="password" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Company Name</label>
+<input type="text" name="company_name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">HR Email</label>
+<input type="email" name="hr_email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Website</label>
+<input type="text" name="website" class="form-control">
+</div>
+
+<button class="btn btn-success w-100">
+Register
+</button>
+
+</form>

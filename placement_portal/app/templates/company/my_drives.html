@@ -1,0 +1,114 @@
+{% extends "company/layout.html" %}
+
+{% block title %}
+My Placement Drives
+{% endblock %}
+
+{% block company_header %}
+
+{% set title = "My Placement Drives" %}
+{% set subtitle = "Manage all placement drives created by your company" %}
+
+{% include "company/components/_company_header.html" %}
+
+{% endblock %}
+
+{% block company_content %}
+
+<div class="card">
+
+
+<div class="card-body">
+
+    {% if drives %}
+
+    <div class="table-responsive">
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Application Deadline</th>
+                    <th>Status</th>
+                    <th>Applications</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for drive in drives %}
+
+                <tr>
+
+                    <td>{{ drive.job_title }}</td>
+
+                    <td>{{ drive.application_deadline }}</td>
+
+                    <td>{{ drive.status }}</td>
+
+                    <td>
+                        {% if drive.applications %}
+                            {{ drive.applications|length }}
+                        {% else %}
+                            0
+                        {% endif %}
+                    </td>
+
+                    <td>
+
+                        <a href="{{ url_for('company.drive_detail_view', drive_id=drive.id) }}"
+                           class="btn btn-sm btn-primary">
+                           View
+                        </a>
+
+                        <a href="{{ url_for('company.view_applicants_view', drive_id=drive.id) }}"
+                           class="btn btn-sm btn-info">
+                           Applicants
+                        </a>
+
+                        {% if drive.status == "approved" %}
+
+<form method="POST"
+      action="{{ url_for('company.close_drive_view', drive_id=drive.id) }}"
+      style="display:inline;">
+
+    <button type="submit" class="btn btn-sm btn-warning">
+        Close
+    </button>
+
+</form>
+
+{% else %}
+
+<span class="badge bg-secondary">
+    {{ drive.status }}
+</span>
+
+{% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <p class="text-muted">No drives created yet.</p>
+
+    {% endif %}
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "admin/layout.html" %}
+
+{% block title %}
+Reports & Statistics
+{% endblock %}
+
+{% block admin_header %}
+
+{% set title = "Placement Reports" %}
+{% set subtitle = "Placement statistics and analytics" %}
+{% set show_search = false %}
+
+{% include "admin/components/_admin_header.html" %}
+
+{% endblock %}
+
+{% block admin_content %}
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Total Selected</h5>
+                <h2 class="text-success">{{ total_selected }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Total Rejected</h5>
+                <h2 class="text-danger">{{ total_rejected }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Selection Ratio</h5>
+                <h2 class="text-primary">{{ selection_ratio }}%</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-4">
+
+<div class="card">
+    <div class="card-body">
+
+        <h5 class="mb-3">Placement Summary</h5>
+
+        <table class="table table-bordered">
+
+            <thead class="table-light">
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Total Selected Students</td>
+                    <td>{{ total_selected }}</td>
+                </tr>
+
+                <tr>
+                    <td>Total Rejected Applications</td>
+                    <td>{{ total_rejected }}</td>
+                </tr>
+
+                <tr>
+                    <td>Selection Ratio</td>
+                    <td>{{ selection_ratio }}%</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}

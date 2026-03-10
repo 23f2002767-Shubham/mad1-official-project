@@ -1,0 +1,97 @@
+{% extends "company/layout.html" %}
+
+{% block title %}
+Shortlisted Candidates
+{% endblock %}
+
+{% block company_header %}
+
+{% set title = "Shortlisted Candidates" %}
+{% set subtitle = drive.job_title %}
+
+{% include "company/components/_company_header.html" %}
+
+{% endblock %}
+
+{% block company_content %}
+
+<div class="card">
+
+
+<div class="card-body">
+
+    {% if shortlisted_applications %}
+
+    <div class="table-responsive">
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for application in shortlisted_applications %}
+
+                <tr>
+
+                    <td>{{ application.student.name }}</td>
+
+                    <td>{{ application.student.student_id }}</td>
+
+                    <td>{{ application.status }}</td>
+
+                    <td>
+
+                        <form method="POST"
+                              action="{{ url_for('company.select_application_view', application_id=application.id) }}"
+                              style="display:inline;">
+
+                            <button type="submit"
+                                    class="btn btn-sm btn-success">
+                                Select
+                            </button>
+
+                        </form>
+
+                        <form method="POST"
+                              action="{{ url_for('company.reject_application_view', application_id=application.id) }}"
+                              style="display:inline;">
+
+                            <button type="submit"
+                                    class="btn btn-sm btn-danger">
+                                Reject
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <p class="text-muted">No candidates shortlisted yet.</p>
+
+    {% endif %}
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block title %}
+Placement Portal
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- HERO SECTION -->
+<section class="py-5 text-center bg-light">
+    <div class="container">
+
+        <h1 class="display-5 fw-semibold">
+            Simplifying Campus Placements
+        </h1>
+
+        <p class="text-muted">
+            A centralized platform for students, companies,
+            and the institute placement cell
+        </p>
+
+        <div class="mt-4">
+
+            <a href="{{ url_for('auth.login_view') }}"
+               class="btn btn-dark me-2">
+                Student Login
+            </a>
+
+            <a href="{{ url_for('auth.login_view') }}"
+               class="btn btn-outline-dark me-2">
+                Company Login
+            </a>
+
+            <a href="{{ url_for('auth.login_view') }}"
+               class="btn btn-outline-dark">
+                Admin Login
+            </a>
+
+        </div>
+
+        <div class="mt-3 text-muted">
+            New Company?
+            <a href="{{ url_for('auth.register_company_view') }}">
+                Register here
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- HOW PORTAL WORKS -->
+<section class="py-5 bg-white">
+    <div class="container text-center">
+
+        <h4 class="mb-4">How the Portal Works</h4>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <h5>1</h5>
+                    <h6>Company Registration</h6>
+                    <p class="text-muted small">
+                        Company registers and gets approved by Admin
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <h5>2</h5>
+                    <h6>Post Placement Drives</h6>
+                    <p class="text-muted small">
+                        Approved companies create placement drives
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <h5>3</h5>
+                    <h6>Students Apply</h6>
+                    <p class="text-muted small">
+                        Students apply and track application status
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- FEATURES -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+
+        <h4 class="mb-4">Features</h4>
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <h6>Admin Approval</h6>
+                <p class="text-muted small">
+                    Admin approves companies and placement drives
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <h6>Application Tracking</h6>
+                <p class="text-muted small">
+                    Students track application progress
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <h6>Shortlisting & Selection</h6>
+                <p class="text-muted small">
+                    Companies shortlist and select candidates
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <h6>Secure Access</h6>
+                <p class="text-muted small">
+                    Role-based login for Admin, Company, and Student
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- USER ROLES -->
+<section class="py-5 bg-white">
+    <div class="container text-center">
+
+        <h4 class="mb-4">User Roles</h4>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Student</h5>
+                    <ul class="text-muted small list-unstyled">
+                        <li>Apply to placement drives</li>
+                        <li>Track application status</li>
+                        <li>View placement history</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Company</h5>
+                    <ul class="text-muted small list-unstyled">
+                        <li>Post placement drives</li>
+                        <li>View applications</li>
+                        <li>Shortlist candidates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Admin</h5>
+                    <ul class="text-muted small list-unstyled">
+                        <li>Approve companies & drives</li>
+                        <li>Monitor placement activities</li>
+                        <li>Manage students and companies</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- GET STARTED -->
+<section class="py-5 bg-light text-center">
+    <div class="container">
+
+        <h4 class="mb-3">
+            Get Started with the Placement Portal
+        </h4>
+
+        <a href="{{ url_for('auth.register_student_view') }}"
+           class="btn btn-dark me-2">
+            Student Register
+        </a>
+
+        <a href="{{ url_for('auth.register_company_view') }}"
+           class="btn btn-outline-dark">
+            Company Register
+        </a>
+
+    </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="py-4 bg-white text-center border-top">
+
+    <p class="mb-1 fw-semibold">
+        Institute Placement Portal
+    </p>
+
+    <p class="small text-muted">
+        Contact: placement@institute.edu
+    </p>
+
+    <p class="small text-muted">
+        © 2026 Institute Placement Portal
+    </p>
+
+</footer>
+
+
+{% endblock %}

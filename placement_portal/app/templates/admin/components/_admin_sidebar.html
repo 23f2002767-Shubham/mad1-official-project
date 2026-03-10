@@ -1,0 +1,41 @@
+
+<h6 class="text-uppercase px-3 mt-3" style="color: rgb(242, 31, 105);">Admin Panel</h6>
+<div class="list-group list-group-flush">
+
+    <a href="{{ url_for('admin.admin_dashboard_view') }}"
+       class="list-group-item list-group-item-action
+       {% if request.endpoint == 'admin.admin_dashboard_view' %}active{% endif %}">
+        Dashboard
+    </a>
+
+    <a href="{{ url_for('admin.pending_drives_view') }}"
+       class="list-group-item list-group-item-action
+       {% if request.endpoint == 'admin.pending_drives_view' %}active{% endif %}">
+        Pending Drives
+    </a>
+
+    <a href="{{ url_for('admin.pending_companies_view') }}"
+   class="list-group-item list-group-item-action
+   {% if request.endpoint == 'admin.pending_companies_view' %}active{% endif %}">
+    Pending Companies
+</a>
+
+    <a href="{{ url_for('admin.manage_companies_view') }}"
+   class="list-group-item list-group-item-action
+   {% if request.endpoint == 'admin.manage_companies_view' %}active{% endif %}">
+    Manage Companies
+</a>
+
+    <a href="{{ url_for('admin.manage_students_view') }}"
+       class="list-group-item list-group-item-action
+       {% if request.endpoint == 'admin.manage_students_view' %}active{% endif %}">
+        Manage Students
+    </a>
+
+    <a href="{{ url_for('admin.reports_view') }}"
+       class="list-group-item list-group-item-action
+       {% if request.endpoint == 'admin.reports_view' %}active{% endif %}">
+        Reports
+    </a>
+
+</div>

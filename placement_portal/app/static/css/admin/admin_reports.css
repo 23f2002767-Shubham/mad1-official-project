@@ -1,0 +1,23 @@
+/* ===============================
+   ADMIN REPORTS STYLING
+   Scoped to .admin-wrapper
+================================ */
+
+/* Chart container */
+.admin-wrapper .admin-report-card {
+    min-height: 300px;
+}
+
+/* Chart canvas styling (admin only) */
+.admin-wrapper .admin-report-card canvas {
+    max-height: 250px;
+    width: 100%;
+    display: block;
+}
+
+/* Optional spacing helper */
+.admin-wrapper .admin-report-card .card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

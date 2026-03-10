@@ -1,0 +1,190 @@
+
+tree /F /A > Project_Structure.txt
+
+
+C:.
+|   config.py
+|   Project_Structure.txt
+|   requirements.txt
+|   run.py
+|   
++---app
+|   |   decorators.py
+|   |   extensions.py
+|   |   __init__.py
+|   |   
+|   +---blueprints
+|   |   +---admin
+|   |   |   |   routes.py
+|   |   |   |   
+|   |   |   \---__pycache__
+|   |   |           routes.cpython-311.pyc
+|   |   |           
+|   |   +---api
+|   |   |       routes.py
+|   |   |       
+|   |   +---auth
+|   |   |   |   routes.py
+|   |   |   |   
+|   |   |   \---__pycache__
+|   |   |           routes.cpython-311.pyc
+|   |   |           
+|   |   +---company
+|   |   |   |   routes.py
+|   |   |   |   
+|   |   |   \---__pycache__
+|   |   |           routes.cpython-311.pyc
+|   |   |           
+|   |   \---student
+|   |       |   routes.py
+|   |       |   
+|   |       \---__pycache__
+|   |               routes.cpython-311.pyc
+|   |               
+|   +---errors
+|   |       handlers.py
+|   |       __init__.py
+|   |       
+|   +---models
+|   |   |   admin.py
+|   |   |   application.py
+|   |   |   company.py
+|   |   |   notification.py
+|   |   |   placement_drive.py
+|   |   |   student.py
+|   |   |   user.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           application.cpython-311.pyc
+|   |           company.cpython-311.pyc
+|   |           placement_drive.cpython-311.pyc
+|   |           placement_history.cpython-311.pyc
+|   |           student.cpython-311.pyc
+|   |           user.cpython-311.pyc
+|   |           __init__.cpython-311.pyc
+|   |           
+|   +---services
+|   |   |   application_service.py
+|   |   |   approval_service.py
+|   |   |   auth_service.py
+|   |   |   drive_service.py
+|   |   |   student_service.py
+|   |   |   
+|   |   \---__pycache__
+|   |           application_service.cpython-311.pyc
+|   |           approval_service.cpython-311.pyc
+|   |           auth_service.cpython-311.pyc
+|   |           drive_service.cpython-311.pyc
+|   |           student_service.cpython-311.pyc
+|   |           
+|   +---static
+|   |   +---css
+|   |   |   |   style.css
+|   |   |   |   
+|   |   |   \---admin
+|   |   |           admin_base.css
+|   |   |           admin_cards.css
+|   |   |           admin_forms.css
+|   |   |           admin_layout.css
+|   |   |           admin_reports.css
+|   |   |           admin_tables.css
+|   |   |           
+|   |   \---images
+|   +---templates
+|   |   |   base.html
+|   |   |   landing.html
+|   |   |   templates_directory tree.txt
+|   |   |   
+|   |   +---admin
+|   |   |   |   applications.html
+|   |   |   |   dashboard.html
+|   |   |   |   layout.html
+|   |   |   |   manage_companies.html
+|   |   |   |   manage_students.html
+|   |   |   |   pending_companies.html
+|   |   |   |   pending_drives.html
+|   |   |   |   reports.html
+|   |   |   |   
+|   |   |   \---components
+|   |   |           _admin_header.html
+|   |   |           _admin_sidebar.html
+|   |   |           _notifications.html
+|   |   |           _search_panel.html
+|   |   |           _stats_cards.html
+|   |   |           _status_badge.html
+|   |   |           
+|   |   +---auth
+|   |   |   |   card_layout.html
+|   |   |   |   layout.html
+|   |   |   |   login.html
+|   |   |   |   register_company.html
+|   |   |   |   register_student.html
+|   |   |   |   
+|   |   |   \---components
+|   |   |           _auth_card.html
+|   |   |           _login_form.html
+|   |   |           _register_company_form.html
+|   |   |           _register_student_form.html
+|   |   |           
+|   |   +---company
+|   |   |   |   applications.html
+|   |   |   |   create_drive.html
+|   |   |   |   dashboard.html
+|   |   |   |   drive_detail.html
+|   |   |   |   edit_drive.html
+|   |   |   |   layout.html
+|   |   |   |   my_drives.html
+|   |   |   |   profile.html
+|   |   |   |   shortlisted_candidates.html
+|   |   |   |   
+|   |   |   \---components
+|   |   |           _company_header.html
+|   |   |           _company_profile_card.html
+|   |   |           _company_sidebar.html
+|   |   |           _notifications.html
+|   |   |           _stats_cards.html
+|   |   |           
+|   |   \---student
+|   |       |   dashboard.html
+|   |       |   layout.html
+|   |       |   my_applications.html
+|   |       |   placement_history.html
+|   |       |   profile.html
+|   |       |   
+|   |       \---components
+|   |               _drive_table.html
+|   |               _notifications.html
+|   |               _profile_snapshot.html
+|   |               _stats_cards.html
+|   |               _student_sidebar.html
+|   |               
+|   +---uploads
+|   |   \---resumes
+|   |           23bcsg60_resume.pdf
+|   |           
+|   +---utils
+|   |   |   constants.py
+|   |   |   validators.py
+|   |   |   
+|   |   \---__pycache__
+|   |           constants.cpython-311.pyc
+|   |           validators.cpython-311.pyc
+|   |           
+|   \---__pycache__
+|           decorators.cpython-311.pyc
+|           extensions.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
++---instance
+|       placement.db
+|       
++---scripts
+|   |   seed_admin.py
+|   |   
+|   \---__pycache__
+|           seed_admin.cpython-311.pyc
+|           
+\---__pycache__
+        config.cpython-311.pyc
+        

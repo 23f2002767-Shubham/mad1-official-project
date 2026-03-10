@@ -1,0 +1,119 @@
+{% extends "company/layout.html" %}
+
+{% block title %}
+Applications
+{% endblock %}
+
+{% block company_header %}
+
+{% set title = "Applications for " ~ drive.job_title %}
+{% set subtitle = "Review and manage student applications" %}
+
+{% include "company/components/_company_header.html" %}
+
+{% endblock %}
+
+{% block company_content %}
+
+<div class="card">
+
+
+<div class="card-body">
+
+    {% if applications %}
+
+    <div class="table-responsive">
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for application in applications %}
+
+                <tr>
+
+                    <td>{{ application.student.name }}</td>
+
+                    <td>{{ application.student.student_id }}</td>
+
+                    <td>{{ application.status }}</td>
+
+                    <td>
+
+{% if application.status == "applied" %}
+
+<form method="POST"
+      action="{{ url_for('company.shortlist_application_view', application_id=application.id) }}"
+      style="display:inline;">
+    <button type="submit" class="btn btn-sm btn-info">
+        Shortlist
+    </button>
+</form>
+
+<form method="POST"
+      action="{{ url_for('company.reject_application_view', application_id=application.id) }}"
+      style="display:inline;">
+    <button type="submit" class="btn btn-sm btn-danger">
+        Reject
+    </button>
+</form>
+
+{% elif application.status == "shortlisted" %}
+
+<form method="POST"
+      action="{{ url_for('company.select_application_view', application_id=application.id) }}"
+      style="display:inline;">
+    <button type="submit" class="btn btn-sm btn-success">
+        Select
+    </button>
+</form>
+
+<form method="POST"
+      action="{{ url_for('company.reject_application_view', application_id=application.id) }}"
+      style="display:inline;">
+    <button type="submit" class="btn btn-sm btn-danger">
+        Reject
+    </button>
+</form>
+
+{% else %}
+
+<span class="badge bg-secondary">
+    {{ application.status }}
+</span>
+
+{% endif %}
+
+</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <p class="text-muted">No applications received yet.</p>
+
+    {% endif %}
+
+</div>
+
+
+</div>
+
+{% endblock %}

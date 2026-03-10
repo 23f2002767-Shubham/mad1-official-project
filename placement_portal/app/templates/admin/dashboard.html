@@ -1,0 +1,22 @@
+{% extends "admin/layout.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block admin_header %}
+
+{% set title = "Dashboard" %}
+{% set subtitle = "Admin overview of the placement portal" %}
+{% set show_search = false %}
+
+{% include "admin/components/_admin_header.html" %}
+
+{% endblock %}
+
+
+{% block admin_content %}
+
+{% include "admin/components/_stats_cards.html" %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Panel | Placement Portal
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-md-2 bg-white border-end min-vh-100 position-sticky top-0 vh-100">
+    {% include "admin/components/_admin_sidebar.html" %}
+</div>
+
+        <!-- Main Content -->
+        <div class="col-md-10 p-4">
+
+            {% block admin_header %}
+            {% endblock %}
+
+            {% block admin_content %}
+            {% endblock %}
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

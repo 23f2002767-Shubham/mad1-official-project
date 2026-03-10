@@ -1,0 +1,8 @@
+Python
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+Flask-Login
+Jinja2
+SQLite
+Werkzeug

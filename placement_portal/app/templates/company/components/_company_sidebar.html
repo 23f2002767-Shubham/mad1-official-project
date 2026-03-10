@@ -1,0 +1,56 @@
+<div class="bg-dark text-white vh-100 p-3">
+
+
+<h5 class="mb-4">Company Panel</h5>
+
+<ul class="nav flex-column">
+
+    <li class="nav-item mb-2">
+        <a href="{{ url_for('company.company_dashboard_view') }}"
+           class="nav-link text-white">
+            Dashboard
+        </a>
+    </li>
+
+    <li class="nav-item mb-2">
+        <a href="{{ url_for('company.create_drive_view') }}"
+           class="nav-link text-white">
+            Create Drive
+        </a>
+    </li>
+
+    <li class="nav-item mb-2">
+        <a href="{{ url_for('company.my_drives_view') }}"
+           class="nav-link text-white">
+            My Drives
+        </a>
+    </li>
+
+    <li class="nav-item mb-2">
+        <a href="{{ url_for('company.company_profile_view') }}"
+           class="nav-link text-white">
+            Profile
+        </a>
+    </li>
+
+    <li class="nav-item mt-4">
+        <li class="nav-item mt-4">
+
+    <form action="{{ url_for('auth.logout_view') }}" method="POST">
+
+        <button type="submit"
+                class="nav-link text-danger btn btn-link text-start w-100 p-4">
+            Logout
+        </button>
+
+    </form>
+
+       
+
+</li>
+    </li>
+
+</ul>
+
+
+</div>

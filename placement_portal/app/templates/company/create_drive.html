@@ -1,0 +1,70 @@
+{% extends "company/layout.html" %}
+
+{% block title %}
+Create Placement Drive
+{% endblock %}
+
+{% block company_header %}
+
+{% set title = "Create Placement Drive" %}
+{% set subtitle = "Post a new job opportunity for students" %}
+
+{% include "company/components/_company_header.html" %}
+
+{% endblock %}
+
+{% block company_content %}
+
+<div class="card">
+
+<div class="card-body">
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Job Title</label>
+            <input type="text"
+                   name="job_title"
+                   class="form-control"
+                   placeholder="e.g. Software Engineer"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Job Description</label>
+            <textarea name="job_description"
+                      class="form-control"
+                      rows="4"
+                      required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Eligibility Criteria</label>
+            <textarea name="eligibility_criteria"
+                      class="form-control"
+                      rows="3"
+                      placeholder="e.g. CGPA ≥ 7.0"
+                      required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Application Deadline</label>
+            <input type="date"
+                   name="application_deadline"
+                   class="form-control"
+                   required>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Create Drive
+        </button>
+
+    </form>
+
+</div>
+
+
+</div>
+
+{% endblock %}

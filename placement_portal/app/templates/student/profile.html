@@ -1,0 +1,118 @@
+{% extends "student/layout.html" %}
+
+{% block title %}
+Student Profile
+{% endblock %}
+
+{% block student_content %}
+
+<h2 class="mb-4">My Profile</h2>
+
+<!-- Profile Snapshot -->
+{% include "student/components/_profile_snapshot.html" %}
+
+{% include "student/components/_notifications.html" %}
+
+<div class="row">
+
+    <!-- Update Profile -->
+    <div class="col-md-6">
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header">
+                <h5 class="mb-0">Update Profile</h5>
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST"
+                      action="{{ url_for('student.update_student_profile_view') }}">
+                     
+
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               value="{{ student.name }}"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Branch</label>
+                        <input type="text"
+                               name="branch"
+                               class="form-control"
+                               value="{{ student.branch }}"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">CGPA</label>
+                        <input type="number"
+                               step="0.01"
+                               min="0"
+                               max="10"
+                               name="cgpa"
+                               class="form-control"
+                               value="{{ student.cgpa }}">
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Update Profile
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Upload Resume -->
+    <div class="col-md-6">
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header">
+                <h5 class="mb-0">Upload Resume</h5>
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST"
+                      action="{{ url_for('student.upload_resume_view') }}"
+                      enctype="multipart/form-data">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Select Resume (PDF/DOC/DOCX)
+                        </label>
+
+                        <input type="file"
+                               name="resume"
+                               class="form-control"
+                               required>
+
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Upload Resume
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

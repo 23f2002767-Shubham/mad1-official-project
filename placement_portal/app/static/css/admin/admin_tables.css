@@ -1,0 +1,46 @@
+/* ===============================
+   ADMIN TABLE & BADGE STYLING
+   Scoped to .admin-wrapper
+================================ */
+
+/* Table hover effect (admin only) */
+.admin-wrapper .table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Badge sizing (admin only) */
+.admin-wrapper .badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.65rem;
+}
+
+/* Optional semantic status helpers (recommended) */
+.admin-wrapper .status-pending {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.admin-wrapper .status-approved {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.admin-wrapper .status-rejected {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.admin-wrapper .status-closed {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+   
+.admin-wrapper .status-shortlisted {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.admin-wrapper .status-selected {
+    background-color: #198754;
+    color: #ffffff;
+}

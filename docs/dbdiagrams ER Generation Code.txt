@@ -1,0 +1,61 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+Table users {
+  id integer [pk, increment]
+  email varchar(120) [not null, unique]
+  password_hash varchar(255) [not null]
+  role varchar(20) [not null]
+  is_active boolean [not null, default: true]
+  created_at datetime [not null]
+}
+
+Table students {
+  id integer [pk, increment]
+  user_id integer [not null, unique, ref: > users.id]
+  student_id varchar(50) [not null, unique]
+  name varchar(100) [not null]
+  branch varchar(50) [not null]
+  cgpa float [not null]
+  resume_path varchar(255)
+  is_resume_uploaded boolean [not null, default: false]
+  is_blacklisted boolean [not null, default: false]
+  created_at datetime [not null]
+}
+
+Table companies {
+  id integer [pk, increment]
+  user_id integer [not null, unique, ref: > users.id]
+  company_name varchar(150) [not null]
+  hr_email varchar(120) [not null]
+  website varchar(255)
+  approval_status varchar(20) [not null]
+  is_blacklisted boolean [not null, default: false]
+  created_at datetime [not null]
+  approved_at datetime
+}
+
+Table placement_drives {
+  id integer [pk, increment]
+  company_id integer [not null, ref: > companies.id]
+  job_title varchar(150) [not null]
+  job_description text [not null]
+  eligibility_criteria varchar(200) [not null]
+  application_deadline date [not null]
+  status varchar(20) [not null]
+  created_at datetime [not null]
+  approved_at datetime
+}
+
+Table applications {
+  id integer [pk, increment]
+  student_id integer [not null, ref: > students.id]
+  drive_id integer [not null, ref: > placement_drives.id]
+  status varchar(20) [not null]
+  applied_at datetime [not null]
+
+  Indexes {
+    (student_id, drive_id) [unique]
+  }
+}

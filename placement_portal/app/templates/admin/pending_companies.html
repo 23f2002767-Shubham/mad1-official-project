@@ -1,0 +1,80 @@
+{% extends "admin/layout.html" %}
+
+{% block title %}
+Pending Companies
+{% endblock %}
+
+{% block admin_header %}
+
+{% set title = "Pending Companies" %}
+{% set subtitle = "Approve or reject new company registrations" %}
+{% set show_search = false %}
+
+{% include "admin/components/_admin_header.html" %}
+
+{% endblock %}
+
+{% block admin_content %}
+
+<div class="card">
+    <div class="card-body">
+
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Company Name</th>
+                    <th>HR Email</th>
+                    <th>Website</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for company in pending_companies %}
+                <tr>
+
+                    <td>{{ company.id }}</td>
+                    <td>{{ company.company_name }}</td>
+                    <td>{{ company.hr_email }}</td>
+                    <td>
+                        <a href="{{ company.website }}" target="_blank">
+                            {{ company.website }}
+                        </a>
+                    </td>
+
+                   <td>
+
+<form action="{{ url_for('admin.approve_company_view', company_id=company.id) }}"
+      method="POST"
+      style="display:inline;">
+    <button class="btn btn-success btn-sm">
+        Approve
+    </button>
+</form>
+
+<form action="{{ url_for('admin.reject_company_view', company_id=company.id) }}"
+      method="POST"
+      style="display:inline;">
+    <button class="btn btn-danger btn-sm">
+        Reject
+    </button>
+</form>
+
+</td>
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+        {% if not pending_companies %}
+        <p class="text-muted">No pending company registrations.</p>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
