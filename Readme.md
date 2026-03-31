@@ -89,15 +89,26 @@ Response → Template → UI
   - Ensures data integrity and avoids redundancy
 
 
-# ⚠️ Constraints & Validations
-A student cannot apply multiple times to the same placement drive
-Placement drive must be approved by admin before visible to students
-Company must be approved before creating drives
-Application status follows controlled transitions:
-Applied → Shortlisted → Selected / Rejected
-Role-based restrictions enforced at route and service level
+## ⚠️ Constraints & Validations
+
+The system enforces multiple constraints to ensure data integrity and correct workflow execution:
+
+- A student **cannot apply multiple times** to the same placement drive  
+- Placement drives are **visible to students only after admin approval**  
+- Companies must be **approved by admin before creating placement drives**  
+
+### 🔄 Application Status Lifecycle
+
+The application follows a controlled state transition:
+- Applied → Shortlisted → Selected / Rejected
 
 
+- Invalid transitions are restricted at both **service layer** and **database level**
+
+### 🔐 Access Control
+
+- Role-based restrictions are enforced using **custom decorators**  
+- Access is validated at both **route level** and **business logic layer**
 
 
 
