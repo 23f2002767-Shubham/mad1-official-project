@@ -128,20 +128,14 @@ The system uses the following main tables:
 ---
 
 ## 🔄 Application Workflow
-Student registers → uploads resume
-↓
-Company registers → Admin approval
-↓
-Company creates placement drive
-↓
-Admin approves drive
-↓
-Students apply to drive
-↓
-Company shortlists candidates
-↓
-Company selects or rejects candidates
 
+1. Student registers and uploads resume  
+2. Company registers → requires admin approval  
+3. Approved company creates placement drive  
+4. Admin approves placement drive  
+5. Students apply to drives  
+6. Company reviews applications  
+7. Candidates are shortlisted, selected, or rejected  
 
 ---
 
