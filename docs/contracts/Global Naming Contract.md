@@ -3,7 +3,7 @@
 This document becomes your **law**.
 If something violates this → it gets refactored.
 
-This is designed to match your existing modular structure  and lifecycle logic .
+This is designed to match the existing modular structure and lifecycle logic .
 
 ---
 

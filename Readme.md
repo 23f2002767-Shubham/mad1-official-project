@@ -1,3 +1,6 @@
+# MAD-1-Official-Project-Placement-Portal-
+This is the official final project
+
 # 🎓 Institute Placement Portal
 
 A **role-based Placement Portal Web Application** built using **Flask, SQLAlchemy, SQLite, and Jinja2** to manage campus recruitment activities involving **Admin, Companies, and Students**.
@@ -158,7 +161,7 @@ Example endpoints:
 Possible extensions include:
 
 Email notifications for application updates
-Placement analytics dashboard
+Placement analytics dashboard 
 Interview scheduling system
 Resume parsing for candidate filtering
 Migration to React (MERN stack)

@@ -92,7 +92,7 @@ C:.
 |   |   |           
 |   |   \---images
 |   +---templates
-|   |   |   base.html
+|   |   |   base.html 
 |   |   |   landing.html
 |   |   |   templates_directory tree.txt
 |   |   |   
