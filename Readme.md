@@ -1,5 +1,4 @@
 # MAD-1-Official-Project-Placement-Portal-
-This is the official final project
 
 # 🎓 Institute Placement Portal
 
@@ -58,6 +57,50 @@ This project was developed as part of the **MAD-1 (Modern Application Developmen
 
 ---
 
+
+## 🧠 Architecture Overview
+
+The application follows a layered architecture:
+
+- **Routes (Blueprints)** – Handle HTTP requests and responses  
+- **Service Layer** – Contains business logic  
+- **Models (SQLAlchemy ORM)** – Database schema and relationships  
+- **Templates (Jinja2)** – UI rendering  
+
+### Request Flow
+Client Request → Blueprint → Service Layer → Model → Database
+↓
+Response → Template → UI
+
+
+
+## ⚙️ Design Decisions
+
+- **Flask App Factory Pattern**
+  - Enables modular structure and scalability
+
+- **Service Layer Abstraction**
+  - Separates business logic from routes
+
+- **Role-Based Access Control (RBAC)**
+  - Implemented using decorators and role checks
+
+- **Database Normalization**
+  - Ensures data integrity and avoids redundancy
+
+
+# ⚠️ Constraints & Validations
+A student cannot apply multiple times to the same placement drive
+Placement drive must be approved by admin before visible to students
+Company must be approved before creating drives
+Application status follows controlled transitions:
+Applied → Shortlisted → Selected / Rejected
+Role-based restrictions enforced at route and service level
+
+
+
+
+
 # 📂 Project Structure :
  The placement_portal project structure is mentioned in Project_Structure.txt file
 
@@ -84,7 +127,7 @@ The system uses the following main tables:
 
 ---
 
-# 🔄 Application Workflow
+## 🔄 Application Workflow
 Student registers → uploads resume
 ↓
 Company registers → Admin approval
@@ -101,6 +144,17 @@ Company selects or rejects candidates
 
 
 ---
+
+
+## ⚡ Key Engineering Highlights
+
+- Implemented **RBAC using decorators**
+- Designed **service layer abstraction**
+- Ensured **data integrity via constraints + validations**
+- Used **Flask App Factory pattern**
+- Structured for **future MERN migration**
+
+
 
 # ⚙️ Setup Instructions
 
