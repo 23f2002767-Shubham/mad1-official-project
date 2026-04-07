@@ -1,3 +1,7 @@
+'''
+Company must be approved by admin only then it can login and create drives
+'''
+
 from app.extensions import db
 from app.models.company import Company
 from app.models.placement_drive import PlacementDrive
