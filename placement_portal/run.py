@@ -12,7 +12,7 @@ Runs it
 ❌ No database
 '''
 
-
+"""Main entry point for Placement Portal Flask app"""
 
 from app import create_app
 

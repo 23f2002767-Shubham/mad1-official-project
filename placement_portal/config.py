@@ -9,7 +9,7 @@ Database path
 
 Upload folder
 
-
+This stores the physical path of the database files
 '''
 
 # config.py
