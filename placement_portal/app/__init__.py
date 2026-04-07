@@ -25,7 +25,8 @@ Python never searches all files in a package — it only executes __init__.py an
 
 from flask import Flask, app
 from config import Config
-from app.extensions import db, login_manager
+#Flask-Login for session management and user handling
+from app.extensions import db, login_manager 
 from app.models import student  # Importing the database and login manager from extensions.py
 from flask import render_template
 
