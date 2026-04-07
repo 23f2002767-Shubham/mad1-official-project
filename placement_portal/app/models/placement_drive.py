@@ -1,3 +1,8 @@
+'''
+This  is created in later phase after creation of Admin,Student,Company
+It contains the details of the Placement created by the companies 
+'''
+
 from app.extensions import db
 from app.utils.constants import (
     DRIVE_PENDING,
