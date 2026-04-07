@@ -1,3 +1,7 @@
+'''
+This directory contains all the Models (Classes <--> Tables ) in my placement portal
+'''
+
 from app.models.user import User
 from app.models.student import Student
 from app.models.company import Company
