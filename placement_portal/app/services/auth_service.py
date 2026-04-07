@@ -1,7 +1,7 @@
 """
 AuthService -> This is done here by werkzeug (a flask module)
 ===========
-
+#RBAC - authentication and authorization according to the user role types
 Domain: Identity & Authentication
 
 Purpose:
