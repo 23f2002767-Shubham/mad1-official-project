@@ -1,3 +1,7 @@
+'''
+This file contains the controller of admin routes
+'''
+
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_required
 from app.decorators import admin_required
