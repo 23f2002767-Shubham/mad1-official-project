@@ -1,3 +1,6 @@
+# This contains the constants the Roles, Status changes as constants 
+# so that no wrong type or spelling mistake is inserted in the database
+
 # ==========================================================
 # ROLES
 # ==========================================================
