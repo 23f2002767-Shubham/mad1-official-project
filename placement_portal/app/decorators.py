@@ -1,3 +1,5 @@
+# add more edge cases in future 
+
 from functools import wraps
 from flask_login import current_user
 from flask import abort
